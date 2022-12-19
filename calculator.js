@@ -41,6 +41,20 @@ function createCalculatorButtons(){
 
 createCalculatorButtons();
 
+// Rad and deg
+ let Radian  = true;
+ const rad_btn = document.getElementById('rad')
+ const deg_btn = document.getElementById("deg")
+
+ rad_btn.classlist.add("active-angle");
+
+ function angleToggler(){
+    rad_btn.classlist.toggle("active-angle");
+    deg_btn.classlist.toggle("active-angle");
+
+ }
+
+
 // CLICK EVENT LISTENER
 input_element.addEventListener("click", event =>{
     const target_btn = event.target;
@@ -60,6 +74,9 @@ function calculator(button){
         data.operation.push(button.symbol);
         data.formula.push(button.formula);
     }else if(button.type == "trigo_function"){
+
+          data.operation.push(button.symbol);
+          data.operation.push(button.formula);
 
     } else if(button.type == "math_function"){
       console.log("math")
@@ -93,19 +110,25 @@ function calculator(button){
             data.operation =[];
             data.formula = [];
 
-            updateOutputResult(0);
+            UpdateOutputResult(0);
         }
 
     } else if(button.name == "delete"){
         data.operation.pop();
         data.formula.pop();
+    } else if(button.name == "rad"){
+        Radian = true;
+        angleToggler();
+    }else if(button.name == "deg"){
+        Radian = false;
+        angleToggler();
     }
     else if(button.type == "calculator"){
         formula_str = data.formula.join('');
 
         let result = eval(formula_str);
 
-        updateOutputResult(result);
+        UpdateOutputResult(result);
     }
 
 
@@ -118,4 +141,36 @@ function UpdateOutputOperation(operation){
 }
 function UpdateOutputResult(result){
     output_result_element.innerHTML = result
+}
+
+// Factorial Function
+function factorial (number){
+    if(number === 0 || number === 1) return 1;
+
+    let result = 1;
+    for(let i = 0; i<=number; i++){
+        result *= i;
+        if(result === infinity) return infinity
+    }
+    return result;
+}
+
+
+// Trignometric functions
+function trigo(callback, angle){
+
+    if (!Radian){
+        angle = angle = Math.PI/180;
+    }
+    return callback(angle);
+}
+function inv_trigo(callback, value){}{
+
+    let angle = callback(value);
+    if (!Radian){
+        angle = angle = 180/Math.pi;
+    }
+
+    return angle;
+
 }
