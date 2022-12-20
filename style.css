@@ -1,5 +1,12 @@
 body {
- background: linear-gradient(to right, #85D8CE, #085078);
+ /*background: linear-gradient(to right, #85D8CE, #085078);*/
+}
+
+body{
+  background-image: url(kek.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  
 }
 
 
