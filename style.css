@@ -1,12 +1,10 @@
 body {
  /*background: linear-gradient(to right, #85D8CE, #085078);*/
-}
-
-body{
-  background-image: url(kek.jpeg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  
+ background-size: cover;
+ background-image: url('kek.jpeg');
+ width: 100%;
+ height: 100%;
+  background-position: center;
 }
 
 
@@ -21,6 +19,8 @@ body{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  
+  
 }
 
 .calculator {
