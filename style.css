@@ -1,6 +1,8 @@
 body {
-  background: linear-gradient(to right, #85D8CE, #085078);
+ background: linear-gradient(to right, #85D8CE, #085078);
 }
+
+
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -16,11 +18,12 @@ body {
 
 .calculator {
   width: 440px;
-  padding: 20px;
+  padding: 40px;
   border-radius: 5px;
-  margin: 20px auto;
+  margin: 100px auto;
   font-size: 16px;
   background-color: #333333;
+  justify-items: center;
 }
 
 .input {

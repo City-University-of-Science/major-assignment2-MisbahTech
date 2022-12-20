@@ -44,6 +44,7 @@ let app = new Vue({
         } else {
           me.current = eval(me.current);
         }
+        // creating keys of calculator
 
       } else if (key === 'C') {
 
